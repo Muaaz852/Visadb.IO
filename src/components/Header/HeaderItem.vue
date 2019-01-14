@@ -1,63 +1,36 @@
 <template>
-    <div>
-        <slot name="nav-brand-logo">
 
-            <a class="navbar-brand" href="#">
+    <li class="nav-item pl-5 ml-5">
+        <a class="nav-link" :href="this.itemHref">
 
-                <slot name="nav-item-brand-logo">
+            <i :class="this.itemIconClass">
 
-                </slot>
+            </i>
 
-            </a>
+            {{ this.itemText }}
+        </a>
+    </li>
 
-        </slot>
-
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-
-                <slot name="nav-simple-item">
-
-                </slot>
-
-            </li>
-        </ul>
-        <!--<slot name="nav-login-button">-->
-
-        <!--</slot>-->
-
-        <!--<slot name="nav-language-select">-->
-
-        <!--</slot>-->
-
-    </div>
 </template>
 
 <script>
 
     export default {
         name: "HeaderItem",
+        props: {
+            itemText: String,
+            itemHref: String,
+            itemIconClass: String,
+        }
     }
 
 </script>
 
 <style scoped>
-    .brand-logo {
-        position: absolute;
-        left: 12px;
-        top: 8px;
-
-        /*background: url(../../assets/visa-db-brand-logo.png);*/
-        opacity: 0.5;
+    .navbar-expand-lg .navbar-nav .nav-link {
+        /*padding-left: 2.5rem;*/
+    }
+    .navbar-light .navbar-nav .nav-link{
+        color: rgb(255, 255, 255);
     }
 </style>
-
-/* image */
-
-position: absolute;
-width: 142.33px;
-height: 35px;
-left: 12px;
-top: 8px;
-
-background: url(image.png);
-opacity: 0.5;
